@@ -35,6 +35,16 @@
 
                 attacker.Attack(defender, random);
 
+                if (attacker.CurrentHealth < attacker.MaxHealth / 4)
+                {
+                    attacker.CurrentHealth = 0;
+                }
+
+                if (defender.CurrentHealth < defender.MaxHealth / 4)
+                {
+                    defender.CurrentHealth = 0;
+                }
+
                 this.History.Add(
                     $"Round {this.History.Count + 1}: " +
                     $"{attacker.Type} {attacker.Id} attacked {defender.Type} {defender.Id}. (" +
@@ -49,16 +59,6 @@
                     {
                         hero.IncreaseHealth(10);
                     }
-                }
-
-                if (attacker.CurrentHealth < attacker.MaxHealth / 4)
-                {
-                    attacker.CurrentHealth = 0;
-                }
-
-                if (defender.CurrentHealth < defender.MaxHealth / 4)
-                {
-                    defender.CurrentHealth = 0;
                 }
             }
         }

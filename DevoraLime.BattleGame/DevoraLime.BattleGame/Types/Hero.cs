@@ -61,6 +61,9 @@
                     }
                     break;
             }
+
+            this.CurrentHealth = this.CurrentHealth / 2;
+            defender.CurrentHealth = defender.CurrentHealth / 2;
         }
 
         public void IncreaseHealth(
